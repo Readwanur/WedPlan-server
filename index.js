@@ -84,13 +84,18 @@ app.use("/api/upload", uploadRouter);
 app.use(notFoundHandler);
 app.use(globalErrorHandler);
 
-async function startServer() {
+export { app };
+
+export async function startServer() {
   try {
     await connectToMongoDB();
     await ensureSeedData();
 
-    app.listen(PORT, () => {
-      console.log(`WedPlan Express server listening on port ${PORT}`);
+    return new Promise((resolve) => {
+      const server = app.listen(PORT, () => {
+        console.log(`WedPlan Express server listening on port ${PORT}`);
+        resolve(server);
+      });
     });
   } catch (error) {
     console.error("Failed to start WedPlan server:", error);
@@ -98,4 +103,4 @@ async function startServer() {
   }
 }
 
-startServer();
+export const serverReady = startServer();

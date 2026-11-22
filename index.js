@@ -18,12 +18,10 @@ import uploadRouter from "./src/routes/upload.js";
 import { ensureSeedData } from "./src/seed.js";
 
 const app = express();
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT;
 
 const allowedOrigins = [
-  process.env.CLIENT_URL || "http://localhost:3000",
-  "http://localhost:3000",
-  "http://127.0.0.1:3000",
+  process.env.CLIENT_URL
 ];
 
 app.use(

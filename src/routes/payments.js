@@ -2,13 +2,16 @@ import crypto from "crypto";
 import express from "express";
 import { ObjectId } from "mongodb";
 import Stripe from "stripe";
-import { getCollections } from "../config/db.js";
+import {
+  buildIdQuery,
+  getCollections,
+  normalizeUser,
+} from "../config/db.js";
 import {
   requireRole,
   verifyJWT,
   verifyNotBlocked,
 } from "../middleware/auth.js";
-import { buildIdQuery, normalizeUser } from "../utils/helpers.js";
 
 const router = express.Router();
 

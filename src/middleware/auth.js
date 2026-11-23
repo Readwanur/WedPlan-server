@@ -1,6 +1,9 @@
 import jwt from "jsonwebtoken";
-import { getCollections } from "../config/db.js";
-import { buildIdQuery, normalizeUser } from "../utils/helpers.js";
+import {
+  buildIdQuery,
+  getCollections,
+  normalizeUser,
+} from "../config/db.js";
 
 const JWT_SECRET =
   process.env.JWT_SECRET ||

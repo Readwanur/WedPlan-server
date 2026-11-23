@@ -1,7 +1,6 @@
 import express from "express";
-import { getCollections } from "../config/db.js";
+import { getCollections, normalizeUser } from "../config/db.js";
 import { verifyJWT, verifyNotBlocked } from "../middleware/auth.js";
-import { normalizeUser } from "../utils/helpers.js";
 
 const router = express.Router();
 

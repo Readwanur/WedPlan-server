@@ -17,10 +17,15 @@ import servicesRouter from "./src/routes/services.js";
 import uploadRouter from "./src/routes/upload.js";
 
 const app = express();
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 5000;
+
+const rawClientUrl = process.env.CLIENT_URL || "http://localhost:3000";
+const normalizedClientUrl = rawClientUrl.replace(/\/$/, "");
 
 const allowedOrigins = [
-  process.env.CLIENT_URL
+  normalizedClientUrl,
+  "https://wedplan-client-nine.vercel.app",
+  "http://localhost:3000",
 ];
 
 app.use(
@@ -82,6 +87,7 @@ app.use(notFoundHandler);
 app.use(globalErrorHandler);
 
 export { app };
+export default app;
 
 export async function startServer() {
   try {
@@ -99,4 +105,7 @@ export async function startServer() {
   }
 }
 
-export const serverReady = startServer();
+// Auto-start listener when run directly in Node (e.g. locally or on a VPS/Render)
+if (!process.env.VERCEL) {
+  startServer();
+}

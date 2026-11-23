@@ -15,7 +15,6 @@ import paymentsRouter, {
 import profileRouter from "./src/routes/profile.js";
 import servicesRouter from "./src/routes/services.js";
 import uploadRouter from "./src/routes/upload.js";
-import { ensureSeedData } from "./src/seed.js";
 
 const app = express();
 const PORT = process.env.PORT;
@@ -87,7 +86,6 @@ export { app };
 export async function startServer() {
   try {
     await connectToMongoDB();
-    await ensureSeedData();
 
     return new Promise((resolve) => {
       const server = app.listen(PORT, () => {

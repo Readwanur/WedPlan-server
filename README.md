@@ -38,7 +38,7 @@ WedPlan Server is the RESTful Express.js and MongoDB backend for **WedPlan — W
 
 - **Runtime & Framework**: Node.js, Express.js v5
 - **Database**: MongoDB (`user`, `services`, `bookings`, `transactions`)
-- **Authentication & Security**: Better Auth (Crypto & Session Verification), `jsonwebtoken` (JWT), `cors`
+- **Authentication & Security**: Better Auth, `jsonwebtoken`, `cors`
 - **Payments & Media**: `stripe` (Stripe Checkout & Webhooks), ImgBB API
 
 ---

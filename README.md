@@ -6,9 +6,9 @@ WedPlan Server is the RESTful Express.js and MongoDB backend for **WedPlan — W
 
 ## Project Links
 
-- **Live Website Link**: *(Add deployed client URL here)*
-- **Server Repository Link**: *(Add GitHub Server Repo URL here)*
-- **Client Repository Link**: *(Add GitHub Client Repo URL here)*
+- **Live Website Link**: https://wedplan-client-nine.vercel.app/
+- **Server Repository Link**: https://github.com/Readwanur/WedPlan-server
+- **Client Repository Link**: https://github.com/Readwanur/WedPlan-client
 
 ---
 
